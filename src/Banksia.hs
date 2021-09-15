@@ -1,26 +1,21 @@
 module Banksia where
 
-import Control.Monad (forever, forM_)
+import Control.Monad (forever)
 import System.Environment
 import System.Exit
-import Data.ByteString(readFile)
+import Data.ByteString (readFile)
 import Data.ByteString.UTF8
 
 
-run :: String -> IO (Maybe HadError)
+run :: String -> IO ()
 run source = do
   putStrLn source
-  
 
 runFile :: String -> IO ()
 runFile filename = do
   content <- Data.ByteString.readFile filename
-  hadError <- run (toString content)
-  case hadError of
-    Nothing -> pure ()
-    Just HadError -> exitWith (ExitFailure 70)
-    _ -> exitWith (ExitFailure 65)
-
+  run (toString content)
+  
 runPrompt :: IO ()
 runPrompt = forever $ do
   putStr "banksia> "
