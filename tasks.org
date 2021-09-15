@@ -1,0 +1,3 @@
+* Banksia
+** IO
+*** TODO Catch =hadError= like the Java version (see [[https://github.com/neurogoo/hlox/blob/master/src/Main.hs][here]])

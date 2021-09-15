@@ -27,6 +27,8 @@ library
   exposed-modules:
       Banksia
       Lib
+      Token
+      TokenType
   other-modules:
       Paths_banksia
   hs-source-dirs:
